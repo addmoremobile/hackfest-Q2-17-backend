@@ -125,7 +125,7 @@ module.exports = {
                 } else if (session.try == 2) {
                     return "Verdammt, das war falsch!";
                 } else if (session.try == 3) {
-                    return "Letzte Versuch! Gib dir Mühe!";
+                    return "Mist, wieder falsch. Letzter Versuch! Gib dir Mühe!";
                 }
             },
             "expect": "pinInput",
@@ -171,16 +171,20 @@ module.exports = {
         },
         "pinInput": function (intent, session) {
             var guess = intent.slots.pin.value;
-            var correct = solution(session);
-            console.log(guess, correct);
+            if (guess.length == 3) {
+                var correct = solution(session);
+                console.log(guess, correct);
 
-            if (correct == guess) {
-                return true;
-            } else {
-                if (session.try >= 3) {
-                    return "dead";
+                if (correct == guess) {
+                    return true;
+                } else {
+                    if (session.try >= 3) {
+                        return "dead";
+                    }
+                    return false;
                 }
-                return false;
+            } else {
+                return "unknownpin";
             }
         }
 
