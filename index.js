@@ -100,7 +100,6 @@ var sm = require("./sm/state")(story);
 
 var newSessionHandlers = {
     "LaunchRequest": function () {
-        this.handler.state = GAME_STATES.START;
         var speechOutput = sm.getOutput();
         this.emit(":ask", speechOutput, speechOutput);
     },
