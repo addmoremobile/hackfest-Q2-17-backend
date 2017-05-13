@@ -42,6 +42,9 @@ var newSessionHandlers = {
             var speechOutput = "";
             do {
                 var res = sm.handleIntent(that.event.request.intent);
+                if (speechOutput.length > 0) {
+                    speechOutput += "<break time=\"2s\"/>";
+                }
                 speechOutput += sm.getOutput();
             } while (res == sm.STATES.AUTO);
             
