@@ -30,7 +30,7 @@ module.exports = {
         },
         "story": {
             "text": function(session) {
-                return session.name + "? Gut, dass du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"1s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klau... Warte! <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
+                return session.name + "? Gut, dass du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"1s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
                 // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
