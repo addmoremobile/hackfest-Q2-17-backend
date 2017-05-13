@@ -133,7 +133,7 @@ var newSessionHandlers = {
 
 function writeSession(state) {
     memcached.set(getSessionKey(), state, 0, function (err) { 
-        console.err(err);
+        console.log(err);
     });
 }
 
