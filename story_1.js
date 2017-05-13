@@ -43,7 +43,7 @@ module.exports = {
                 session.number1 = random(0, 10);
             },
             "text": function(session) {
-                return "Du siehst die " + session.number1;
+                return "Du siehst die " + session.number1 + ". Willst du links oder rechts lang?";
             },
             "expect": "directionInput",
             "next": {
