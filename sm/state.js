@@ -5,7 +5,8 @@ module.exports = function (config) {
         STATES: {
             DEFAULT: 0,
             QUIT: 1,
-            AUTO: 2
+            AUTO: 2,
+            ILLEGAL: 3
         },
         states: config.states,
         intents: config.intents,
@@ -44,6 +45,10 @@ module.exports = function (config) {
                         console.log("IntentSlots", intent.slots);
 
                         var next = this.intents[intent.name](intent, this.session);
+
+                        if (next == this.STATES.ILLEGAL) {
+                            return;
+                        }
 
                         if (typeof current.next === "string" && this.states[this.currentState]) {
                             this.currentState = current.next;

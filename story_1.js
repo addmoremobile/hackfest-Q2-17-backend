@@ -184,7 +184,7 @@ module.exports = {
                     return false;
                 }
             } else {
-                return "unknownpin";
+                return 3;
             }
         }
 
