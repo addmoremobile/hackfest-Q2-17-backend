@@ -24,7 +24,7 @@ module.exports = {
             "next": "intro"
         },
         "intro": {
-            "text": "Ich bin Bonny. Du bist die einzige Person die mir helfen kann. Wie heißt du?",
+            "text": "Ich bin Bony. Du bist die einzige Person die mir helfen kann. Wie heißt du?",
             "expect": "nameInput",
             "next": "story"
         },
@@ -134,7 +134,7 @@ module.exports = {
         },
         "statelessLose": {
             "text": function(session) {
-                return "Das Spiel ist aus. Du wurdest erwischt!";
+                return "Das Spiel ist aus. Bony wurde erwischt!";
             },
         }
     },
