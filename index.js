@@ -132,7 +132,7 @@ var newSessionHandlers = {
                 writeSession(sm.exportState(data));
                 that.emit(":ask", speechOutput, speechOutput);
             } else {
-                memcached.del(getSessionKey());
+                writeSession(null);
                 that.emit(":tell", speechOutput, speechOutput);
             }
             
