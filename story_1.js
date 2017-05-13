@@ -30,7 +30,7 @@ module.exports = {
         },
         "story": {
             "text": function(session) {
-                return "<say-as interpret-as=\"interjection\">" + session.name + "?</say-as> Gut das du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Zum Glück konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
+                return "<say-as interpret-as=\"interjection\">" + session.name + "?</say-as> Gut das du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Zum Glück konnte ich das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
                 // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
@@ -46,7 +46,7 @@ module.exports = {
             "next": "statelessLose"
         },
         "chooseRoom": {
-            "text": " Wo soll ich mich verstecken? Hier steht ein Wäschewagen. Da vorne ist eine Tür die in eine Besenkammer führt und weiter hinten ist ein Heizungsraum.",
+            "text": "<amazon:effect name=\"whispered\">Wo soll ich mich verstecken? Hier steht ein Wäschewagen. Da vorne ist eine Tür die in eine Besenkammer führt und weiter hinten ist ein Heizungsraum.</amazon:effect>",
             "expect": "chooseRoomInput",
             "next": {
                 "besenkammer": "guard",
@@ -78,7 +78,7 @@ module.exports = {
             "entryAction": function(session) {
                 session.number2 = random(0, 10);
             },
-            "text": "Jetzt bin ich in der Nähe des Wärter Pausenraumes. Ich höre zwei Wärter. Soll ich einfach weitergehen oder zuhören was sie sagen?",
+            "text": "Jetzt bin ich in der Nähe des Wärter Pausenraumes. Ich höre zwei Wärter. Soll ich einfach weitergehen oder lauschen was sie sagen?",
             "expect": ["listenOrRunInput", "booleanInput"],
             "next": {
                 "weitergehen": "idletime",
@@ -91,7 +91,7 @@ module.exports = {
         },
         "listen": {
             "text": function(session) {
-                return "Ich hören den Wärtern zu. Sie reden über ihren letzten Campingausflug. Der eine Wärter fragt den anderen nach dem neuen Code. Ich habe nur die Zahl <say-as interpret-as=\"number\">" + session.number2 + "</say-as>. gehört. Ich weiß aber nicht an welcher Position des Codes sie steht.";
+                return "Ich höre den Wärtern zu. Sie reden über ihren letzten Campingausflug. Der eine Wärter fragt den anderen nach dem neuen Code. Ich habe nur die Zahl <say-as interpret-as=\"number\">" + session.number2 + "</say-as>. gehört. Ich weiß aber nicht an welcher Position des Codes sie steht.";
             },
             "expect": "*",
             "next": "story2"
@@ -102,6 +102,9 @@ module.exports = {
             "next": "story2"
         },
         "story2": {
+            "entryAction": function(session) {
+                session.number3 = random(0, 10);
+            },
             "text": function (session) {
                 return "Ich gehe weiter. Da vorne ist die Tür durch die ich gekommen bin als ich hier eingesperrt wurde. Da muss ich durch, dann bin ich frei. <break time=\"1s\"/> Um hier raus zu kommen muss ich einen dreistelligen Code eingeben. Auf der <say-as interpret-as=\"number\">" + session.number3 + "</say-as>. ist ein Ketchup Fleck. Einer der Wärter muss die Taste nach dem Mittagessen beschmiert haben . Jetzt muss ich den Code eingeben.";
             },
@@ -110,10 +113,6 @@ module.exports = {
         },
         "door": {
             "entryAction": function (session) {
-                if (typeof session.number3 === 'undefined') {
-                    session.number3 = random(0, 10);
-                }
-
                 if (!session.try) {
                     session.try = 1;
                 } else {
@@ -124,7 +123,7 @@ module.exports = {
                 if (session.try == 1) { 
                     return "Welchen Code soll ich eingeben?";
                 } else if (session.try == 2) {
-                    return "Vedammt, das war falsch!";
+                    return "Verdammt, das war falsch!";
                 } else if (session.try == 3) {
                     return "Letzte Versuch! Gib dir Mühe!";
                 }
