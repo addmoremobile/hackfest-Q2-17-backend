@@ -57,7 +57,7 @@ var languageString = {
     "de": {
         "translation": {
             "QUESTIONS" : questions["QUESTIONS_DE_DE"],
-            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch <audio src=\"https://www.w3schools.com/html/horse.mp3\"></audio>", // Be sure to change this for your skill.
+            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch", // Be sure to change this for your skill.
             "HELP_MESSAGE": "Ich stelle dir %s Multiple-Choice-Fragen. <amazon:effect name=\"whispered\">Antworte mit der Zahl, die zur richtigen Antwort gehört.</amazon>" +
             "Sage beispielsweise eins, zwei, drei oder vier. Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“. ",
             "REPEAT_QUESTION_MESSAGE": "Wenn die letzte Frage wiederholt werden soll, sage „Wiederholen“ ",
@@ -69,7 +69,7 @@ var languageString = {
             "TRIVIA_UNHANDLED": "Sagt eine Zahl beispielsweise zwischen 1 und %s",
             "HELP_UNHANDLED": "Sage ja, um fortzufahren, oder nein, um das Spiel zu beenden.",
             "START_UNHANDLED": "Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“.",
-            "NEW_GAME_MESSAGE": "Willkommen bei <prosody pitch=\"x-low\">%s</prosody>. Wuuuuiiiiii! ",
+            "NEW_GAME_MESSAGE": " <audio src=\"https://www.w3schools.com/html/horse.mp3\" /> Willkommen bei <prosody pitch=\"x-low\">%s</prosody>.",
             "WELCOME_MESSAGE": "Ich stelle dir %s Fragen und du versuchst, so viele wie möglich richtig zu beantworten. " +
             "Sage einfach die Zahl, die zur richtigen Antwort passt. Fangen wir an. ",
             "ANSWER_CORRECT_MESSAGE": "Richtig. ",
