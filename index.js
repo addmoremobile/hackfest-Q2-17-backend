@@ -132,6 +132,7 @@ var newSessionHandlers = {
             if (res == sm.STATES.DEFAULT) {
                 that.emit(":ask", speechOutput, speechOutput);
             } else {
+                memcached.del(getSessionKey());
                 that.emit(":tell", speechOutput, speechOutput);
             }
             
