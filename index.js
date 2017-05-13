@@ -138,7 +138,7 @@ var newSessionHandlers = {
             if (res == sm.STATES.DEFAULT) {
                 // writeSession(sm.exportState(data));
                 that.emit(":ask", speechOutput, speechOutput);
-            } else {
+            } else if (res === sm.STATES.QUIT ){
                 // writeSession(null);
                 that.emit(":tell", speechOutput, speechOutput);
             }
