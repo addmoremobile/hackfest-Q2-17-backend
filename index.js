@@ -122,11 +122,19 @@ var newSessionHandlers = {
         memcached.gets(getSessionKey(), function (err, data) {
             console.log("Request: ", that.event.request);
             sm.importState(data);
-            sm.handleIntent(that.event.request.intent);
-            var speechOutput = sm.getOutput();
+            var speechOutput = "";
+            do {
+                var res = sm.handleIntent(that.event.request.intent);
+                speechOutput += sm.getOutput();
+            } while (res == sm.STATES.AUTO);
+            
             writeSession(sm.exportState(data));
-
-            that.emit(":ask", speechOutput, speechOutput);
+            if (res == sm.STATES.DEFAULT) {
+                that.emit(":ask", speechOutput, speechOutput);
+            } else {
+                that.emit(":tell", speechOutput, speechOutput);
+            }
+            
         });
     }
 };
