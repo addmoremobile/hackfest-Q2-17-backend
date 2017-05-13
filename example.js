@@ -8,11 +8,21 @@ var scenario = require("./scenario")["first"];
 
 console.log(sm.getOutput());
 
+// alexa request
+// session id> asdklfja;klsdjf;kalj
+// state: memache <- sessoin id
+// sm.importState(state)
+// handleIntnet(REQUEST.intent)
+// output
+// memcache <- exportState
+// response(output)
+
 for (var i in scenario) {
     var intent = scenario[i];
 
     do {
         // Intent aus dem Alexa Request an die SM weiterreichen
+
         var result = sm.handleIntent(intent);
         // Was soll Alexa sagen?
         console.log(sm.getOutput());

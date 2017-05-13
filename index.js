@@ -113,7 +113,8 @@ var newSessionHandlers = {
         this.emitWithState("helpTheUser", true);
     },
     "Unhandled": function () {
-        var speechOutput = this.t("START_UNHANDLED");
+        sm.handleIntent(this.event.request.intent);
+        var speechOutput = sm.getOutput();
         this.emit(":ask", speechOutput, speechOutput);
     }
 };
