@@ -18,8 +18,12 @@ module.exports = function (config) {
             }
         },
         importState: function(state) {
-            this.session = state.session;
-            this.currentState = state.currentState;
+            if (state.session) {
+                this.session = state.session;
+            }
+            if (state.currentState) {
+                this.currentState = state.currentState;
+            }
         },
         getOutput: function () {
             var current = this.states[this.currentState];
