@@ -10,6 +10,19 @@ function solution(session) {
 
 module.exports = {
     "states": {
+        "getContact": {
+            "text": "Ist da jemand? Kannst du mich hören?",
+            "expect": "booleanInput",
+            "next": {
+                "ja" : "intro",
+                "nein": "joke"
+            }
+        },
+        "joke": {
+            "text": "Haha, du Witzbold. Ich kann dich doch h",
+            "expect": "*",
+            "next": "intro"
+        },
         "intro": {
             "text": "Handy geklaut... Pause... Nummer gespeichert. Wie ist dein Name?",
             "expect": "nameInput",
@@ -17,7 +30,8 @@ module.exports = {
         },
         "story": {
             "text": function(session) {
-                return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
+                return session.name + ", Mir wurde ein Verbrechen angehängt. <break time=\"2s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärter <amazon:effect name=\"whispered\">Warte da kommt jemand, soll ich mich Verstecken oder soll ich weglaufen? </amazon:effect>";
+                // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
             "next": {
@@ -108,6 +122,9 @@ module.exports = {
             session.name = intent.slots.name.value;
             return intent.slots.name.value;
         },
+        "booleanInput": function (intent, session) {
+            return intent.slots.boolean.value;
+        }
         "hideOrRunInput": function(intent, session) {
             return intent.slots.hideOrRun.value;
         },
