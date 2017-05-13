@@ -67,8 +67,9 @@ module.exports = function (config) {
                     }
                 }
             }
-
-            return this.STATES.QUIT;
+            if (!this.states[this.currentState].next) {
+                return this.STATES.QUIT;
+            }
         }
     }
 };
