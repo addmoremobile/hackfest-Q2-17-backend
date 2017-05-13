@@ -102,7 +102,9 @@ module.exports = {
             "next": "story2"
         },
         "story2": {
-            "text": "Ich gehe weiter. Da vorne ist die Tür durch die ich gekommen bin als ich hier eingesperrt wurde. Da muss ich durch, dann bin ich frei. <break time=\"1s\"/> Um hier raus zu kommen muss ich einen dreistelligen Code eingeben. Auf der <say-as interpret-as=\"number\">" + session.number3 + "</say-as>. ist ein Ketchup Fleck. Einer der Wärter muss die Taste nach dem Mittagessen beschmiert haben . Jetzt muss ich den Code eingeben.",
+            "text": function (session) {
+                return "Ich gehe weiter. Da vorne ist die Tür durch die ich gekommen bin als ich hier eingesperrt wurde. Da muss ich durch, dann bin ich frei. <break time=\"1s\"/> Um hier raus zu kommen muss ich einen dreistelligen Code eingeben. Auf der <say-as interpret-as=\"number\">" + session.number3 + "</say-as>. ist ein Ketchup Fleck. Einer der Wärter muss die Taste nach dem Mittagessen beschmiert haben . Jetzt muss ich den Code eingeben.";
+            },
             "expect": "*",
             "next": "door"
         },
