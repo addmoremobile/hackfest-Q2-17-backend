@@ -19,7 +19,7 @@ module.exports = {
             }
         },
         "joke": {
-            "text": "Haha, du Witzbold. Ich kann dich doch hören.",
+            "text": "Verarsch mich nicht! Ich kann dich doch hören.",
             "expect": "*",
             "next": "intro"
         },
