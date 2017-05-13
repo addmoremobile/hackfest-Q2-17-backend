@@ -19,18 +19,18 @@ module.exports = {
             }
         },
         "joke": {
-            "text": "Verarsch mich nicht <say-as interpret-as=\"expletive\">Mother Fucker</say-as>! Ich höre dich doch!!",
+            "text": "Verarsch mich nicht du <say-as interpret-as=\"expletive\">Mother Fucker</say-as>! Ich höre dich doch!!",
             "expect": "*",
             "next": "intro"
         },
         "intro": {
-            "text": "Ich bin Börgi du bist die einzige Person die mir helfen kann. Wie heißt du?",
+            "text": "Ich bin Bonny. Du bist die einzige Person die mir helfen kann. Wie heißt du?",
             "expect": "nameInput",
             "next": "story"
         },
         "story": {
             "text": function(session) {
-                return "<say-as interpret-as=\"interjection\">" + session.name + "?</say-as> Gut, dass du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
+                return "<say-as interpret-as=\"interjection\">" + session.name + "?</say-as> Gut das du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
                 // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
@@ -41,7 +41,9 @@ module.exports = {
             }
         },
         "endGame": {
-            "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu."
+            "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu.",
+            "expect": "*",
+            "next": "statelessLose"
         },
         "chooseRoom": {
             "text": " Wo soll ich mich verstecken? Hier steht ein Wäschewagen. Da vorne ist eine Tür die in eine Besenkammer führt und weiter hinten ist ein Heizungsraum.",
@@ -53,7 +55,11 @@ module.exports = {
             }
         },
         "endGame1": {
-            "text": "<amazon:effect name=\"whispered\"> Hey!"  + return session.name +  "Ich glaube ich werde geschoben. <break time=\“1s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!",
+            "text": function (session) {
+                return "<amazon:effect name=\"whispered\"> Hey!"  + session.name +  "Ich glaube ich werde geschoben. <break time=\"0.5s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!";
+            },
+            "expect": "*",
+            "next": "statelessLose"
         },
         "guard": {
             "entryAction": function(session) {
@@ -126,6 +132,11 @@ module.exports = {
         "lose": {
             "text": function(session) {
                 return "Verloren. Richtig wäre die " + solution(session) + " gewesen";
+            },
+        },
+        "statelessLose": {
+            "text": function(session) {
+                return "Das Spiel ist aus. Du wurdest erwischt!";
             },
         }
     },
