@@ -24,7 +24,7 @@ module.exports = {
             "next": "intro"
         },
         "intro": {
-            "text": "Handy geklaut... Pause... Nummer gespeichert. Wie ist dein Name?",
+            "text": "Ich bin Börgi du bist die einzige Person die mir helfen kann. Wie heißt du?",
             "expect": "nameInput",
             "next": "story"
         },
@@ -49,8 +49,11 @@ module.exports = {
             "next": {
                 "besenkammer": "guard",
                 "heizungsraum": "guard",
-                "wäschekorb": "endGame"
+                "wäschekorb": "endGame1"
             }
+        },
+        "endGame1": {
+            "text": "<amazon:effect name=\"whispered\"> Hey!"  + return session.name +  "Ich glaube ich werde geschoben. <break time=\“1s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!",
         },
         "guard": {
             "entryAction": function(session) {
