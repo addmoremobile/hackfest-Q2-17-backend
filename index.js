@@ -118,10 +118,11 @@ var newSessionHandlers = {
         this.emitWithState("helpTheUser", true);
     },
     "Unhandled": function () {
+        var that = this;
         memcached.gets(getSessionKey(), function (err, data) {
             
             sm.importState(data);
-            sm.handleIntent(this.event.request.intent);
+            sm.handleIntent(that.event.request.intent);
             var speechOutput = sm.getOutput();
             writeSession(sm.exportState(data));
 
