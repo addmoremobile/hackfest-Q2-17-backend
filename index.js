@@ -108,6 +108,7 @@ var newSessionHandlers = {
     "LaunchRequest": function () {
         // memcached.gets(getSessionKey(), function (err, data) {
             // sm.importState(data);
+            sm.reset();
             var speechOutput = sm.getOutput();
             this.emit(":ask", speechOutput, speechOutput);   
         // });

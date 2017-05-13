@@ -11,21 +11,15 @@ module.exports = function (config) {
         intents: config.intents,
         session: {},
         currentState: Object.keys(config.states)[0],
-        exportState: function() {
-            return {
-                "session": this.session,
-                "currentState": this.currentState
-            }
-        },
-        importState: function(state) {
+        reset: function() {
             if (!state) {
                 return;
             }
             if (state.session) {
-                this.session = state.session;
+                this.session = {};
             }
             if (state.currentState) {
-                this.currentState = state.currentState;
+                this.currentState = Object.keys(config.states)[0];
             }
         },
         getOutput: function () {
