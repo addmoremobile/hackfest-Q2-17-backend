@@ -77,7 +77,7 @@ var languageString = {
             "CORRECT_ANSWER_MESSAGE": "Die richtige Antwort ist %s: %s. ",
             "ANSWER_IS_MESSAGE": "Diese Antwort ist ",
             "TELL_QUESTION_MESSAGE": "Frage %s. %s ",
-            "GAME_OVER_MESSAGE": "Du hast %s von %s richtig beantwortet. Danke fürs Mitspielen!",
+            "GAME_OVER_MESSAGE": "Du hast %s von %s richtig beantwortet. <emphasis level=\"strong\">Danke</emphasis> fürs Mitspielen!",
             "SCORE_IS_MESSAGE": "Dein Ergebnis ist %s. "
         }
     }
