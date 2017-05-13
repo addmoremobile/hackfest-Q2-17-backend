@@ -120,22 +120,22 @@ module.exports = {
     "intents": {
         "nameInput": function (intent, session) {
             session.name = intent.slots.name.value;
-            return intent.slots.name.value;
+            return intent.slots.name.value.toLowerCase();
         },
         "booleanInput": function (intent, session) {
-            return intent.slots.boolean.value;
+            return intent.slots.boolean.value.toLowerCase();
         },
         "hideOrRunInput": function(intent, session) {
-            return intent.slots.hideOrRun.value;
+            return intent.slots.hideOrRun.value.toLowerCase();
         },
         "directionInput": function(intent, session) {
-            return intent.slots.direction.value;
+            return intent.slots.direction.value.toLowerCase();
         },
         "chooseRoomInput": function(intent, session) {
             return intent.slots.chooseRoom.value.toLowerCase();
         },
         "listenOrRunInput": function(intent, session) {
-            return intent.slots.listenOrRun.value;
+            return intent.slots.listenOrRun.value.toLowerCase();
         },
         "pinInput": function (intent, session) {
             var guess = intent.slots.pin.value;
