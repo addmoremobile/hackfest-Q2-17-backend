@@ -66,9 +66,7 @@ module.exports = {
                 session.number1 = random(1, 10);
             },
             "text": function(session) {
-                return "Ok der Wärter ist vorbeigegangen. Er öffnet eine Tür mit einem Code. Ich konnte sehen wie er die erste Nummer des Pins eingegeben hat. Es war die Ziffer: " + session.number1 + "</say-as>. <break time=\“1s\"/> Ok, ich gehe dann weiter <break time=\“2s\"/> Hier gabelt sich der Weg"
-                + session.name + ", soll ich links oder rechts weitergehen?",
-
+                return "Ok der Wärter ist vorbeigegangen. Er öffnet eine Tür mit einem Code. Ich konnte sehen wie er die erste Nummer des Pins eingegeben hat. Es war die Ziffer: " + session.number1 + ". <break time=\"0.5s\"/> Ok, ich gehe dann weiter <break time=\"1s\"/> Hier gabelt sich der Weg" + session.name + ", soll ich links oder rechts weitergehen?";
             },
             "expect": "directionInput",
             "next": {
