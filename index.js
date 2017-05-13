@@ -85,8 +85,12 @@ var languageString = {
 
 var Alexa = require("alexa-sdk");
 var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+var deviceId;
 
 exports.handler = function(event, context, callback) {
+    deviceId = event.context.System.device.deviceId;
+    console.log("Device ID: " + deviceId);
+
     var alexa = Alexa.handler(event, context);
     alexa.appId = APP_ID;
     // To enable string internationalization (i18n) features, set a resources object.
@@ -97,6 +101,8 @@ exports.handler = function(event, context, callback) {
 
 var story = require("./story_1");
 var sm = require("./sm/state")(story);
+var Memcached = require("memcached");
+var memcached = new Memcached('127.0.0.1:11211');
 
 var newSessionHandlers = {
     "LaunchRequest": function () {
@@ -112,11 +118,27 @@ var newSessionHandlers = {
         this.emitWithState("helpTheUser", true);
     },
     "Unhandled": function () {
-        sm.handleIntent(this.event.request.intent);
-        var speechOutput = sm.getOutput();
-        this.emit(":ask", speechOutput, speechOutput);
+        memcached.gets(getSessionKey(), function (err, data) {
+            
+            sm.importState(data);
+            sm.handleIntent(this.event.request.intent);
+            var speechOutput = sm.getOutput();
+            writeSession(sm.exportState(data));
+
+            this.emit(":ask", speechOutput, speechOutput);
+        });
     }
 };
+
+function writeSession(state) {
+    memcached.set(getSessionKey(), state, 0, function (err) { 
+        console.err(err);
+    });
+}
+
+function getSessionKey() {
+    return "session_" + deviceId;
+}
 
 var startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
     "StartGame": function (newGame) {
