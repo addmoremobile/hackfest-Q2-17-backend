@@ -26,7 +26,7 @@ module.exports = function (config) {
 
         },
         handleIntent: function (intent) {
-            //console.log(intent);
+            console.log(intent);
             var current = this.states[this.currentState];
 
             if (typeof current.expect === "string") {
