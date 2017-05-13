@@ -42,7 +42,7 @@ module.exports = {
         },
         "endGame": {
             "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu.",
-            "expect": "*"
+            "expect": "*",
             "next": "lose"
         },
         "chooseRoom": {
