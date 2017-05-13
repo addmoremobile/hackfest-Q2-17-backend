@@ -128,8 +128,8 @@ var newSessionHandlers = {
                 speechOutput += sm.getOutput();
             } while (res == sm.STATES.AUTO);
             
-            writeSession(sm.exportState(data));
             if (res == sm.STATES.DEFAULT) {
+                writeSession(sm.exportState(data));
                 that.emit(":ask", speechOutput, speechOutput);
             } else {
                 memcached.del(getSessionKey());
