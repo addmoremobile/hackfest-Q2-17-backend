@@ -120,13 +120,13 @@ var newSessionHandlers = {
     "Unhandled": function () {
         var that = this;
         memcached.gets(getSessionKey(), function (err, data) {
-            
+            console.log("Request: ", that.event.request);
             sm.importState(data);
             sm.handleIntent(that.event.request.intent);
             var speechOutput = sm.getOutput();
             writeSession(sm.exportState(data));
 
-            this.emit(":ask", speechOutput, speechOutput);
+            that.emit(":ask", speechOutput, speechOutput);
         });
     }
 };
