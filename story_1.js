@@ -134,7 +134,7 @@ module.exports = {
         },
         "statelessLose": {
             "text": function(session) {
-                return "Verloren. Du wurdest erwischt!";
+                return "Das Spiel ist aus. Du wurdest erwischt!";
             },
         }
     },
