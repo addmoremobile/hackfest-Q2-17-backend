@@ -69,7 +69,7 @@ var languageString = {
             "TRIVIA_UNHANDLED": "Sagt eine Zahl beispielsweise zwischen 1 und %s",
             "HELP_UNHANDLED": "Sage ja, um fortzufahren, oder nein, um das Spiel zu beenden.",
             "START_UNHANDLED": "Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“.",
-            "NEW_GAME_MESSAGE": "Willkommen bei %s. ",
+            "NEW_GAME_MESSAGE": "Willkommen bei <amazon:effect name=\"whispered\">%s</<amazon:effect>. ",
             "WELCOME_MESSAGE": "Ich stelle dir %s Fragen und du versuchst, so viele wie möglich richtig zu beantworten. " +
             "Sage einfach die Zahl, die zur richtigen Antwort passt. Fangen wir an. ",
             "ANSWER_CORRECT_MESSAGE": "Richtig. ",
