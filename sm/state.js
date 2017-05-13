@@ -18,6 +18,9 @@ module.exports = function (config) {
             }
         },
         importState: function(state) {
+            if (!state) {
+                return;
+            }
             if (state.session) {
                 this.session = state.session;
             }
