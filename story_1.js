@@ -53,7 +53,7 @@ module.exports = {
             }
         },
         "endGame1": {
-            "text": "<amazon:effect name=\"whispered\"> Hey!"  + return session.name +  "Ich glaube ich werde geschoben. <break time=\“1s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!",
+            "text": "<amazon:effect name=\"whispered\"> Hey!"  + session.name +  "Ich glaube ich werde geschoben. <break time=\"0.5s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!",
         },
         "guard": {
             "entryAction": function(session) {
