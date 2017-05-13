@@ -49,9 +49,11 @@ module.exports = function (config) {
             for (var i in current.expect) {
                 var expect = current.expect[i];
 
-                if (expect === intent.name || expect === "*") {
+                if (expect === intents.name || expect === "*") {
                     //console.log(expect);
                     if (this.intents[intent.name]) {
+                        console.log("IntentSlots", intent.slots);
+                        
                         var next = this.intents[intent.name](intent, this.session);
 
                         if (typeof current.next === "string") {
