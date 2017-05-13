@@ -106,8 +106,12 @@ var memcached = new Memcached('127.0.0.1:11211');
 
 var newSessionHandlers = {
     "LaunchRequest": function () {
-        var speechOutput = sm.getOutput();
-        this.emit(":ask", speechOutput, speechOutput);
+        // memcached.gets(getSessionKey(), function (err, data) {
+            // sm.importState(data);
+            var speechOutput = sm.getOutput();
+            this.emit(":ask", speechOutput, speechOutput);   
+        // });
+        
     },
     "AMAZON.StartOverIntent": function() {
         this.handler.state = GAME_STATES.START;
@@ -119,11 +123,11 @@ var newSessionHandlers = {
     },
     "Unhandled": function () {
         var that = this;
-        memcached.gets(getSessionKey(), function (err, data) {
+        // memcached.gets(getSessionKey(), function (err, data) {
             console.log("Request: ", that.event.request);
-            console.log("SessionData", data);
-            
-            sm.importState(data);
+            // console.log("SessionData", data);
+
+            // sm.importState(data);
             var speechOutput = "";
             do {
                 var res = sm.handleIntent(that.event.request.intent);
@@ -131,14 +135,14 @@ var newSessionHandlers = {
             } while (res == sm.STATES.AUTO);
             
             if (res == sm.STATES.DEFAULT) {
-                writeSession(sm.exportState(data));
+                // writeSession(sm.exportState(data));
                 that.emit(":ask", speechOutput, speechOutput);
             } else {
-                writeSession(null);
+                // writeSession(null);
                 that.emit(":tell", speechOutput, speechOutput);
             }
             
-        });
+        // });
     }
 };
 
