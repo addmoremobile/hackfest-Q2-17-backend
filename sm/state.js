@@ -75,8 +75,9 @@ module.exports = function (config) {
                     if (this.states[this.currentState].expect == "*") {
                         return this.STATES.AUTO;
                     }
-
-                    return this.STATES.DEFAULT;
+                    if (this.states[this.currentState].next) {
+                        return this.STATES.DEFAULT;
+                    }
                 }
             }
 
