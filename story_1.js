@@ -67,12 +67,14 @@ module.exports = {
         },
         "talk": {
             "text": "Möchtest du lauschen?",
-            "expect": "listenOrRunInput",
+            "expect": ["listenOrRunInput", "booleanInput"],
             "next": {
                 "weitergehen": "story2",
                 "gehe weiter": "story2",
+                "nein": "story2",
                 "lauschen": "listen",
                 "horchen": "listen",
+                "ja": "listen",
             }
         },
         "listen": {
