@@ -54,6 +54,8 @@ var newSessionHandlers = {
             } else if (res === sm.STATES.QUIT ){
                 // writeSession(null);
                 that.emit(":tell", speechOutput, speechOutput);
+            } else {
+                that.emit(":ask", speechOutput, speechOutput);
             }
             
         // });
