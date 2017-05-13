@@ -45,10 +45,12 @@ module.exports = function (config) {
 
                         var next = this.intents[intent.name](intent, this.session);
 
-                        if (typeof current.next === "string") {
+                        if (typeof current.next === "string" && this.states[this.currentState]) {
                             this.currentState = current.next;
                         } else if (typeof current.next === "object") {
-                            this.currentState = current.next[next];
+                            if (current.next[next] && this.states[current.next[next]]) {
+                                this.currentState = current.next[next];
+                            }
                         }
 
                         if (this.states[this.currentState].entryAction) {
