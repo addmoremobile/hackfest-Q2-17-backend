@@ -121,9 +121,9 @@ module.exports = {
             "text": function (session) {
                 if (session.try == 1) { 
                     return "Welchen Code soll ich eingeben?";
-                } else (session.try == 2) {
+                } else if (session.try == 2) {
                     return "Vedammt, das war falsch!";
-                } else (session.try == 3) {
+                } else if (session.try == 3) {
                     return "Letzte Versuch! Gib dir Mühe!";
                 }
             },
