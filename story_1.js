@@ -124,7 +124,7 @@ module.exports = {
         },
         "booleanInput": function (intent, session) {
             return intent.slots.boolean.value;
-        }
+        },
         "hideOrRunInput": function(intent, session) {
             return intent.slots.hideOrRun.value;
         },
