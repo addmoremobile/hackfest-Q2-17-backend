@@ -19,7 +19,7 @@ module.exports = {
             }
         },
         "joke": {
-            "text": "Verarsch mich nicht du Mother Fucker! Ich höre dich doch!!",
+            "text": "Verarsch mich nicht <say-as interpret-as=\"expletive\">Mother Fucker</say-as>! Ich höre dich doch!!",
             "expect": "*",
             "next": "intro"
         },
@@ -30,7 +30,7 @@ module.exports = {
         },
         "story": {
             "text": function(session) {
-                return session.name + "? Gut, dass du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
+                return "<say-as interpret-as=\"interjection\">" + session.name + "?</say-as> Gut, dass du da bist!!! Mir wurde ein Verbrechen angehängt. <break time=\"0.5s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärters klauen und... Warte mal <break time=\"0.5s\"/> <amazon:effect name=\"whispered\"> Da kommt jemand, soll ich mich verstecken oder soll ich weglaufen? </amazon:effect>"
                 // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
