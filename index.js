@@ -121,6 +121,8 @@ var newSessionHandlers = {
         var that = this;
         memcached.gets(getSessionKey(), function (err, data) {
             console.log("Request: ", that.event.request);
+            console.log("SessionData", data);
+            
             sm.importState(data);
             var speechOutput = "";
             do {
