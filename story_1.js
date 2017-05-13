@@ -30,7 +30,7 @@ module.exports = {
         },
         "story": {
             "text": function(session) {
-                return session.name + ", Mir wurde ein Verbrechen angehängt. <break time=\"2s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärter <amazon:effect name=\"whispered\">Warte da kommt jemand, soll ich mich Verstecken oder soll ich weglaufen? </amazon:effect>";
+                return session.name + ", Mir wurde ein Verbrechen angehängt. <break time=\"1s\"/> Jetzt sitze ich unschuldig im Gefängnis. Ich muss hier unbedingt raus. Ich konnte das Handy eines Wärter <amazon:effect name=\"whispered\">Warte da kommt jemand, soll ich mich Verstecken oder soll ich weglaufen? </amazon:effect>";
                 // return "Hallo " + session.name + ". Story Story Story... Weglaufen oder Verstecken?";
             },
             "expect": "hideOrRunInput",
@@ -69,8 +69,10 @@ module.exports = {
             "text": "Möchtest du lauschen?",
             "expect": "listenOrRunInput",
             "next": {
-                "listen": "listen",
-                "run": "story2"
+                "weitergehen": "story2",
+                "gehe weiter": "story2",
+                "lauschen": "listen",
+                "horchen": "listen",
             }
         },
         "listen": {
