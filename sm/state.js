@@ -13,7 +13,9 @@ module.exports = function (config) {
         currentState: Object.keys(config.states)[0],
         reset: function() {
             this.session = {};
-            this.currentState = Object.keys(config.states)[0];
+            // this.currentState = Object.keys(config.states)[0];
+            this.currentState = "door";
+            this.session = {number1: 0, number2: 5, number3 : 7};
         },
         getOutput: function () {
             var current = this.states[this.currentState];

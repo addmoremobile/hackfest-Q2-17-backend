@@ -144,6 +144,8 @@ module.exports = {
         "pinInput": function (intent, session) {
             var guess = intent.slots.pin.value;
             var correct = solution(session);
+            console.log(guess, correct);
+            
             if (correct == guess) {
                 return true;
             } else {
