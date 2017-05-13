@@ -33,9 +33,9 @@ module.exports = {
             "text": "Wähle Raum",
             "expect": "chooseRoomInput",
             "next": {
-                "Besenraum": "guard",
+                "Besenkammer": "guard",
                 "Heizungsraum": "guard",
-                "Wäschewagen": "endGame"
+                "Wäschekorb": "endGame"
             }
         },
         "guard": {
