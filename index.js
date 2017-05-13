@@ -57,7 +57,7 @@ var languageString = {
     "de": {
         "translation": {
             "QUESTIONS" : questions["QUESTIONS_DE_DE"],
-            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch <audio src=\"https://www.w3schools.com/html/horse.mp3\" />", // Be sure to change this for your skill.
+            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch <audio src=\"https://www.w3schools.com/html/horse.mp3\"></audio>", // Be sure to change this for your skill.
             "HELP_MESSAGE": "Ich stelle dir %s Multiple-Choice-Fragen. <amazon:effect name=\"whispered\">Antworte mit der Zahl, die zur richtigen Antwort gehört.</amazon>" +
             "Sage beispielsweise eins, zwei, drei oder vier. Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“. ",
             "REPEAT_QUESTION_MESSAGE": "Wenn die letzte Frage wiederholt werden soll, sage „Wiederholen“ ",
