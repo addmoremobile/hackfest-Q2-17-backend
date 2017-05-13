@@ -19,7 +19,7 @@ module.exports = {
             }
         },
         "joke": {
-            "text": "Verarsch mich nicht <say-as interpret-as=\"expletive\">Mother Fucker</say-as>! Ich höre dich doch!!",
+            "text": "Verarsch mich nicht du <say-as interpret-as=\"expletive\">Mother Fucker</say-as>! Ich höre dich doch!!",
             "expect": "*",
             "next": "intro"
         },
@@ -41,7 +41,8 @@ module.exports = {
             }
         },
         "endGame": {
-            "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu."
+            "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu.",
+            "next": "lose"
         },
         "chooseRoom": {
             "text": "Wähle Raum",
@@ -55,7 +56,8 @@ module.exports = {
         "endGame1": {
             "text": function (session) {
                 return "<amazon:effect name=\"whispered\"> Hey!"  + session.name +  "Ich glaube ich werde geschoben. <break time=\"0.5s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!";
-            }
+            },
+            "next": "lose"
         },
         "guard": {
             "entryAction": function(session) {
