@@ -11,7 +11,7 @@ function solution(session) {
 module.exports = {
     "states": {
         "intro": {
-            "text": "Handy geklaut... Pause... Nummer gespeichert",
+            "text": "Handy geklaut... Pause... Nummer gespeichert. Wie ist dein Name?",
             "expect": "nameInput",
             "next": "story"
         },
