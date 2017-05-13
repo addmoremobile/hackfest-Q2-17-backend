@@ -21,8 +21,9 @@ module.exports = {
             },
             "expect": "hideOrRunInput",
             "next": {
-                "hide": "chooseRoom",
-                "run": "endGame"
+                "verstecken": "chooseRoom",
+                "weglaufen": "endGame",
+                "lauf weg": "endGame"
             }
         },
         "endGame": {
