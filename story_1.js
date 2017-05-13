@@ -46,7 +46,7 @@ module.exports = {
             "next": "statelessLose"
         },
         "chooseRoom": {
-            "text": "Wähle Raum",
+            "text": " Wo soll ich mich verstecken? Hier steht ein Wäschewagen. Da vorne ist eine Tür die in eine Besenkammer führt und weiter hinten ist ein Heizungsraum.",
             "expect": "chooseRoomInput",
             "next": {
                 "besenkammer": "guard",
@@ -66,7 +66,9 @@ module.exports = {
                 session.number1 = random(1, 10);
             },
             "text": function(session) {
-                return "Du siehst die <say-as interpret-as=\"number\">" + session.number1 + "</say-as>. Willst du links oder rechts lang?";
+                return "Ok der Wärter ist vorbeigegangen. Er öffnet eine Tür mit einem Code. Ich konnte sehen wie er die erste Nummer des Pins eingegeben hat. Es war die Ziffer: " + session.number1 + "</say-as>. <break time=\“1s\"/> Ok, ich gehe dann weiter <break time=\“2s\"/> Hier gabelt sich der Weg"
+                + session.name + ", soll ich links oder rechts weitergehen?",
+
             },
             "expect": "directionInput",
             "next": {
