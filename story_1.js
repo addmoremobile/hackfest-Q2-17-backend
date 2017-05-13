@@ -24,7 +24,7 @@ module.exports = {
             "next": "intro"
         },
         "intro": {
-            "text": "Ich bin Bonnie. Du bist die einzige Person die mir helfen kann. Wie heißt du denn?",
+            "text": "Ich bin Bonnie. Du bist die einzige Person die mir helfen kann. Wie heißt du?",
             "expect": "nameInput",
             "next": "story"
         },
@@ -42,6 +42,7 @@ module.exports = {
         },
         "endGame": {
             "text": "Ok, ich lauf den Gang entlang und versuche nicht erwischt zu werden <break time=\"0.5s\"/> <emphasis level=\"strong\">Oh nein</emphasis>, der Wärter hat mich gesehen. Er kommt auf mich zu.",
+            "expect": "*"
             "next": "lose"
         },
         "chooseRoom": {
@@ -57,6 +58,7 @@ module.exports = {
             "text": function (session) {
                 return "<amazon:effect name=\"whispered\"> Hey!"  + session.name +  "Ich glaube ich werde geschoben. <break time=\"0.5s\"/> </amazon:effect> Ich glaube die Luft ist rein. Oh nein! Der Wärter ist noch da. Er kommt auf mich zu!";
             },
+            "expect": "*",
             "next": "lose"
         },
         "guard": {
