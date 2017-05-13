@@ -54,7 +54,7 @@ module.exports = {
         },
         "guard": {
             "entryAction": function(session) {
-                session.number1 = random(0, 10);
+                session.number1 = random(1, 10);
             },
             "text": function(session) {
                 return "Du siehst die <say-as interpret-as=\"number\">" + session.number1 + "</say-as>. Willst du links oder rechts lang?";
