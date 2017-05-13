@@ -95,10 +95,14 @@ exports.handler = function(event, context, callback) {
     alexa.execute();
 };
 
+var story = require("./story_1");
+var sm = require("./sm/state")(story);
+
 var newSessionHandlers = {
     "LaunchRequest": function () {
         this.handler.state = GAME_STATES.START;
-        this.emitWithState("StartGame", true);
+        var speechOutput = sm.getOutput();
+        this.emit(":ask", speechOutput, speechOutput);
     },
     "AMAZON.StartOverIntent": function() {
         this.handler.state = GAME_STATES.START;
