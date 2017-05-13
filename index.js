@@ -57,7 +57,7 @@ var languageString = {
     "de": {
         "translation": {
             "QUESTIONS" : questions["QUESTIONS_DE_DE"],
-            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch", // Be sure to change this for your skill.
+            "GAME_NAME" : "Wissenswertes über Rentiere in Deutsch. Psssst", // Be sure to change this for your skill.
             "HELP_MESSAGE": "Ich stelle dir %s Multiple-Choice-Fragen. <amazon:effect name=\"whispered\">Antworte mit der Zahl, die zur richtigen Antwort gehört.</amazon:effect>" +
             "Sage beispielsweise eins, zwei, drei oder vier. Du kannst <emphasis level=\"strong\">jederzeit</emphasis> ein neues Spiel beginnen, sage einfach „Spiel starten“. ",
             "REPEAT_QUESTION_MESSAGE": "Wenn die letzte Frage wiederholt werden soll, sage „Wiederholen“ ",
