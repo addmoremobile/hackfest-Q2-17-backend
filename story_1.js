@@ -33,9 +33,9 @@ module.exports = {
             "text": "Wähle Raum",
             "expect": "chooseRoomInput",
             "next": {
-                "Besenkammer": "guard",
-                "Heizungsraum": "guard",
-                "Wäschekorb": "endGame"
+                "besenkammer": "guard",
+                "heizungsraum": "guard",
+                "wäschekorb": "endGame"
             }
         },
         "guard": {
@@ -115,7 +115,7 @@ module.exports = {
             return intent.slots.direction.value;
         },
         "chooseRoomInput": function(intent, session) {
-            return intent.slots.chooseRoom.value;
+            return intent.slots.chooseRoom.value.toLowerCase();
         },
         "listenOrRunInput": function(intent, session) {
             return intent.slots.listenOrRun.value;
