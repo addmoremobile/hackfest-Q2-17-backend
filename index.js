@@ -69,7 +69,7 @@ var languageString = {
             "TRIVIA_UNHANDLED": "Sagt eine Zahl beispielsweise zwischen 1 und %s",
             "HELP_UNHANDLED": "Sage ja, um fortzufahren, oder nein, um das Spiel zu beenden.",
             "START_UNHANDLED": "Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“.",
-            "NEW_GAME_MESSAGE": " <audio src=\"https://www.w3schools.com/html/horse.mp3\" /> Willkommen bei <prosody pitch=\"x-low\">%s</prosody>.",
+            "NEW_GAME_MESSAGE": " <audio src=\"https://net.addmore-mobile.de/files/new.mp3\" /> Willkommen bei <prosody pitch=\"x-low\">%s</prosody>.",
             "WELCOME_MESSAGE": "Ich stelle dir %s Fragen und du versuchst, so viele wie möglich richtig zu beantworten. " +
             "Sage einfach die Zahl, die zur richtigen Antwort passt. Fangen wir an. ",
             "ANSWER_CORRECT_MESSAGE": "Richtig. ",
