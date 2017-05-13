@@ -95,7 +95,10 @@ module.exports = {
         },
         "door": {
             "entryAction": function (session) {
-                session.number3 = random(0, 10);
+                if (typeof session.number3 === 'undefined') {
+                    session.number3 = random(0, 10);
+                }
+
                 if (!session.try) {
                     session.try = 1;
                 } else {
@@ -145,7 +148,7 @@ module.exports = {
             var guess = intent.slots.pin.value;
             var correct = solution(session);
             console.log(guess, correct);
-            
+
             if (correct == guess) {
                 return true;
             } else {
