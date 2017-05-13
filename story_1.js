@@ -24,7 +24,7 @@ module.exports = {
             "next": "intro"
         },
         "intro": {
-            "text": "Ich bin Börgi du bist die einzige Person die mir helfen kann. Wie heißt du?",
+            "text": "Ich bin Bonnie. Du bist die einzige Person die mir helfen kann. Wie heißt du denn?",
             "expect": "nameInput",
             "next": "story"
         },
